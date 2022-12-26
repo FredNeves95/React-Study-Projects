@@ -5,8 +5,9 @@ import CountryCapitalGame from "./projects/CountryCapitalGame";
 import LikeAndDeslike from "./projects/LikeAndDislike";
 
 import "./App.scss";
+import TicTacToe from "./projects/TicTacToe";
 
-const PROJECTS = ["Country Capital Game", "Like and Dislike"];
+const PROJECTS = ["Country Capital Game", "Like and Dislike", "Tic Tac Toe"];
 
 const COUNTRIES_AND_CAPITALS = {
   Brazil: "Brasilia",
@@ -19,7 +20,9 @@ const COUNTRIES_AND_CAPITALS = {
 };
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState("Like and Dislike");
+  const [selectedProject, setSelectedProject] = useState(
+    "Country Capital Game"
+  );
 
   const handleClick = (event) => {
     setSelectedProject(event.target.name);
@@ -33,7 +36,7 @@ function App() {
       <CountryCapitalGame data={COUNTRIES_AND_CAPITALS} />
     );
     projectsMap.set(PROJECTS[1], <LikeAndDeslike />);
-
+    projectsMap.set(PROJECTS[2], <TicTacToe />);
     return projectsMap.get(selectedProject);
   };
 

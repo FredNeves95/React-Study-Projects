@@ -1,0 +1,24 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    .button {
+      cursor: pointer;
+      background-color: white;
+      color: red;
+      font-size: 1.5rem;
+      font-weight: 600;
+      width: 60px;
+      height: 60px;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
