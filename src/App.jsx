@@ -1,21 +1,23 @@
 import { useState } from "react";
+import cx from "classnames";
 
 import CountryCapitalGame from "./projects/CountryCapitalGame";
 import LikeAndDeslike from "./projects/LikeAndDislike";
 
-import "./App.css";
+import "./App.scss";
 
 const PROJECTS = ["Country Capital Game", "Like and Dislike"];
 
-const countriesAndCapitals = {
+const COUNTRIES_AND_CAPITALS = {
   Brazil: "Brasilia",
   Argentina: "Buenos Aires",
   Chile: "Santiago",
   UnitedStates: "Washington",
   Italy: "Rome",
   Germany: "Berlin",
-  Portugal: "Lisboa",
+  Portugal: "Lisbon",
 };
+
 function App() {
   const [selectedProject, setSelectedProject] = useState("Like and Dislike");
 
@@ -28,7 +30,7 @@ function App() {
 
     projectsMap.set(
       PROJECTS[0],
-      <CountryCapitalGame data={countriesAndCapitals} />
+      <CountryCapitalGame data={COUNTRIES_AND_CAPITALS} />
     );
     projectsMap.set(PROJECTS[1], <LikeAndDeslike />);
 
@@ -37,10 +39,14 @@ function App() {
 
   return (
     <div className="App">
-      <div className="project-container">
+      <h1>Projects</h1>
+      <div className="projects-buttons-container">
         {PROJECTS.map((project, index) => (
           <button
-            className="project-button"
+            className={cx({
+              "project-button": true,
+              selected: selectedProject === project,
+            })}
             key={index}
             name={project}
             onClick={handleClick}
@@ -49,7 +55,7 @@ function App() {
           </button>
         ))}
       </div>
-      {handleRenderProject()}
+      <div className="projects-render">{handleRenderProject()}</div>
     </div>
   );
 }

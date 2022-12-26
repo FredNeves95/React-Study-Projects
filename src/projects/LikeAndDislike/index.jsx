@@ -86,11 +86,17 @@ export default function LikeAndDislike() {
                     .like-button, .dislike-button {
                         font-size: 1rem;
                         padding: 5px 10px;
-                        color: #585858;
+                        background-color: #8e8e8e;
+                        border: none;
+                        border-radius: 4px;
+                        color: #4a4a4a;
+                        margin: 0 4px;
+                        opacity: 0.6;
                     }
                     .liked, .disliked {
                         font-weight: bold;
-                        color: #1565c0
+                        color: #1565c0;
+                        opacity: 1;
                     }
                 `}
       </style>
