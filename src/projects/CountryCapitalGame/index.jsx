@@ -93,11 +93,7 @@ export default function CountryCapitalGame({ data }) {
       return "Congratulations";
     }
     return (
-      <div className="app-container">
-        <p className="game-description">
-          In this game, the goal is to select the country and it's correspondent
-          capital. If the selection is correct, both buttons will disappear.
-        </p>
+      <>
         <div className="button-container">
           {countryAndCapitalArray.map((item) => (
             <button
@@ -110,13 +106,7 @@ export default function CountryCapitalGame({ data }) {
           ))}
         </div>
         <style>
-          {`            .app-container {
-                            display: flex;
-                        }
-                        .game-description {
-                          max-width: 300px;
-                          text-align: center
-                        }
+          {`
                         .button-container {
                             display: flex;
                             flex-wrap: wrap;
@@ -150,7 +140,7 @@ export default function CountryCapitalGame({ data }) {
                         }
                     `}
         </style>
-      </div>
+      </>
     );
   };
 

@@ -10,7 +10,6 @@
       cursor: pointer;
       background-color: rgb(45, 42, 114);
       border: none;
-      min-height: 60px;
       margin-bottom: 8px;
       padding: 8px 12px;
       border-radius: 8px;
@@ -21,6 +20,10 @@
         opacity: 1;
         color: white;
         background-color: rgb(12, 0, 249);
+      }
+
+      @media (max-width: 500px) {
+        min-height: 60px;
       }
     }
   }

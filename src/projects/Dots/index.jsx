@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./style.scss";
+import "./DotsStyle.scss";
 
 const ACTION_BUTTONS = ["Undo", "Redo", "Reset"];
 
@@ -37,13 +37,12 @@ export default function Dots() {
   };
 
   return (
-    <div className="dots-app-container">
-      <p className="dots-game-description">Playing with events and arrays.</p>
-      <span className="button-container">
+    <>
+      <span className="dots-button-container">
         {ACTION_BUTTONS.map((button, index) => (
           <button
             key={index}
-            className="button"
+            className="dots-button"
             name={button}
             onClick={handleButtonClick}
           >
@@ -51,7 +50,7 @@ export default function Dots() {
           </button>
         ))}
       </span>
-      <div className="game-container" onClick={handleGameClick}>
+      <div className="dots-game-container" onClick={handleGameClick}>
         {selectedDots?.map((dot) => (
           <span
             className="dot"
@@ -63,6 +62,6 @@ export default function Dots() {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }

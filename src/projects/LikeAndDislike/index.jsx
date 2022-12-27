@@ -59,8 +59,7 @@ export default function LikeAndDislike() {
   };
 
   return (
-    <div className="app-container">
-      <p className="game-description">Just playing with state management.</p>
+    <>
       <div>
         <button
           className={cx({
@@ -83,13 +82,7 @@ export default function LikeAndDislike() {
         </button>
       </div>
       <style>
-        {`          .app-container {
-                            display: flex;
-                        }
-                    .game-description {
-                      max-width: 300px;
-                      text-align: center
-                    }
+        {`         
                     .like-button, .dislike-button {
                         font-size: 1rem;
                         padding: 5px 10px;
@@ -107,6 +100,6 @@ export default function LikeAndDislike() {
                     }
                 `}
       </style>
-    </div>
+    </>
   );
 }

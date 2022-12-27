@@ -7,23 +7,15 @@ import LikeAndDeslike from "./projects/LikeAndDislike";
 import "./App.scss";
 import TicTacToe from "./projects/TicTacToe";
 import Dots from "./projects/Dots";
-
-const PROJECTS = [
-  "Country Capital Game",
-  "Like and Dislike",
-  "Tic Tac Toe",
-  "Dots",
-];
-
-const COUNTRIES_AND_CAPITALS = {
-  Brazil: "Brasilia",
-  Argentina: "Buenos Aires",
-  Chile: "Santiago",
-  UnitedStates: "Washington",
-  Italy: "Rome",
-  Germany: "Berlin",
-  Portugal: "Lisbon",
-};
+import {
+  COUNTRIES_AND_CAPITALS,
+  countryAndCapitalGameDescription,
+  dotsDescription,
+  likeAndDeslikeDescription,
+  PROJECTS,
+  tikTakToeDescription,
+} from "./utils/constants";
+import BaseLayout from "./components/BaseLayout";
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(
@@ -41,14 +33,27 @@ function App() {
   const handleRenderProject = () => {
     const projectsMap = new Map();
 
-    projectsMap.set(
-      PROJECTS[0],
-      <CountryCapitalGame data={COUNTRIES_AND_CAPITALS} />
-    );
-    projectsMap.set(PROJECTS[1], <LikeAndDeslike />);
-    projectsMap.set(PROJECTS[2], <TicTacToe />);
-    projectsMap.set(PROJECTS[3], <Dots />);
-    return projectsMap.get(selectedProject);
+    projectsMap.set(PROJECTS[0], {
+      component: <CountryCapitalGame data={COUNTRIES_AND_CAPITALS} />,
+      description: countryAndCapitalGameDescription,
+    });
+    projectsMap.set(PROJECTS[1], {
+      component: <LikeAndDeslike />,
+      description: likeAndDeslikeDescription,
+    });
+    projectsMap.set(PROJECTS[2], {
+      component: <TicTacToe />,
+      description: tikTakToeDescription,
+    });
+    projectsMap.set(PROJECTS[3], {
+      component: <Dots />,
+      description: dotsDescription,
+    });
+
+    const currentProject = projectsMap.get(selectedProject);
+
+    const { component, description } = currentProject;
+    return <BaseLayout description={description}>{component}</BaseLayout>;
   };
 
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import cx from "classnames";
-import "./style.scss";
+import "./TicTacToeStyle.scss";
 
 const WINNING_POSITIONS = [
   //horizontal
@@ -139,17 +139,14 @@ export default function TicTacToe() {
   };
 
   return (
-    <div className="app-container">
-      {/* <p className="game-description">
-        Classic tic tac toe game. Call a friend and enjoy!!
-      </p> */}
+    <>
       <h1>{renderTitle()}</h1>
-      <div className="game-container">
+      <div className="tic-tac-toe-game-container">
         {positions.map((position, index) => (
           <button
             key={index}
             className={cx({
-              button: true,
+              "tic-tac-toe-button": true,
               "right-combination": handleWinAnimation(index),
             })}
             onClick={handleClick}
@@ -159,6 +156,6 @@ export default function TicTacToe() {
           </button>
         ))}
       </div>
-    </div>
+    </>
   );
 }
