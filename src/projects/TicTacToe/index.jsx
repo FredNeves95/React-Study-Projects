@@ -29,6 +29,7 @@ export default function TicTacToe() {
   const [gameState, setGameState] = useState(INITIAL_GAME_STATE);
 
   const handleClick = (event) => {
+    if (gameState.hasWinner) return;
     const selectedPosition = event.target.name;
     const hasAlreadySelectedPosition = positions[selectedPosition];
 
