@@ -1,0 +1,60 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+
+  :not(label, button, .radio-container) {
+    margin-bottom: 12px;
+  }
+
+  .radio-container {
+    display: flex;
+    gap: 8px;
+  }
+
+  .input-option {
+    color: rgb(157, 156, 156);
+  }
+
+  datalist {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+  }
+
+  option {
+    padding: 0;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    padding: 8px;
+  }
+
+  input[type="range"] {
+    align-self: center;
+    width: 200px;
+    margin: 0;
+  }
+
+  .input-label {
+    font-weight: 600;
+    color: rgb(201, 201, 201);
+  }
+
+  button[type="submit"] {
+    cursor: pointer;
+    align-self: center;
+    padding: 8px 12px;
+    background-color: rgb(100, 99, 99);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &:hover {
+      background-color: rgb(157, 156, 156);
+      color: rgb(34, 34, 34);
+    }
+  }
+}

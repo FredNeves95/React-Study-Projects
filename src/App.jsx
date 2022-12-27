@@ -1,26 +1,27 @@
 import { useState, useEffect } from "react";
 import cx from "classnames";
+import "./App.scss";
+
+import BaseLayout from "./components/BaseLayout";
 
 import CountryCapitalGame from "./projects/CountryCapitalGame";
 import LikeAndDeslike from "./projects/LikeAndDislike";
-
-import "./App.scss";
 import TicTacToe from "./projects/TicTacToe";
 import Dots from "./projects/Dots";
+import Form from "./projects/Form";
+
 import {
   COUNTRIES_AND_CAPITALS,
   countryAndCapitalGameDescription,
   dotsDescription,
+  formDescription,
   likeAndDeslikeDescription,
   PROJECTS,
   tikTakToeDescription,
 } from "./utils/constants";
-import BaseLayout from "./components/BaseLayout";
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState(
-    "Country Capital Game"
-  );
+  const [selectedProject, setSelectedProject] = useState("Form");
 
   useEffect(() => {
     document.title = selectedProject;
@@ -48,6 +49,11 @@ function App() {
     projectsMap.set(PROJECTS[3], {
       component: <Dots />,
       description: dotsDescription,
+    });
+
+    projectsMap.set(PROJECTS[4], {
+      component: <Form />,
+      description: formDescription,
     });
 
     const currentProject = projectsMap.get(selectedProject);
