@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import cx from "classnames";
 
 import CountryCapitalGame from "./projects/CountryCapitalGame";
@@ -6,8 +6,14 @@ import LikeAndDeslike from "./projects/LikeAndDislike";
 
 import "./App.scss";
 import TicTacToe from "./projects/TicTacToe";
+import Dots from "./projects/Dots";
 
-const PROJECTS = ["Country Capital Game", "Like and Dislike", "Tic Tac Toe"];
+const PROJECTS = [
+  "Country Capital Game",
+  "Like and Dislike",
+  "Tic Tac Toe",
+  "Dots",
+];
 
 const COUNTRIES_AND_CAPITALS = {
   Brazil: "Brasilia",
@@ -20,9 +26,11 @@ const COUNTRIES_AND_CAPITALS = {
 };
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState(
-    "Country Capital Game"
-  );
+  const [selectedProject, setSelectedProject] = useState("Dots");
+
+  useEffect(() => {
+    document.title = selectedProject;
+  }, [selectedProject]);
 
   const handleClick = (event) => {
     setSelectedProject(event.target.name);
@@ -37,6 +45,7 @@ function App() {
     );
     projectsMap.set(PROJECTS[1], <LikeAndDeslike />);
     projectsMap.set(PROJECTS[2], <TicTacToe />);
+    projectsMap.set(PROJECTS[3], <Dots />);
     return projectsMap.get(selectedProject);
   };
 

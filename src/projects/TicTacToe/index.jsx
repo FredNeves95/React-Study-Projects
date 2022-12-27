@@ -140,6 +140,9 @@ export default function TicTacToe() {
 
   return (
     <div className="app-container">
+      <p className="game-description">
+        Classic tic tac toe game. Call a friend and enjoy!!
+      </p>
       <h1>{renderTitle()}</h1>
       <div className="game-container">
         {positions.map((position, index) => (

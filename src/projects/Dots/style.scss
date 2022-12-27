@@ -1,0 +1,45 @@
+.app-container {
+  display: flex;
+
+  .game-description {
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    .button {
+      font-size: 1rem;
+      padding: 5px 10px;
+      background-color: #8e8e8e;
+      border: none;
+      border-radius: 4px;
+      color: #4a4a4a;
+      margin: 0 4px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #cecece;
+        color: #272727;
+      }
+    }
+  }
+
+  .game-container {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+
+    .dot {
+      position: absolute;
+      background-color: red;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+    }
+  }
+}
