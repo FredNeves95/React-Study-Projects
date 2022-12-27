@@ -1,7 +1,9 @@
-.app-container {
+.dots-app-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  .game-description {
+  .dots-game-description {
     max-width: 300px;
     text-align: center;
   }

@@ -37,8 +37,8 @@ export default function Dots() {
   };
 
   return (
-    <div className="app-container">
-      <p className="game-description">Playing with events and arrays.</p>
+    <div className="dots-app-container">
+      <p className="dots-game-description">Playing with events and arrays.</p>
       <span className="button-container">
         {ACTION_BUTTONS.map((button, index) => (
           <button
