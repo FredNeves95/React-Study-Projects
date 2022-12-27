@@ -26,7 +26,9 @@ const COUNTRIES_AND_CAPITALS = {
 };
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState("Dots");
+  const [selectedProject, setSelectedProject] = useState(
+    "Country Capital Game"
+  );
 
   useEffect(() => {
     document.title = selectedProject;
