@@ -133,11 +133,11 @@ export default function TicTacToe() {
 
   const handleWinAnimation = (index) => {
     if (gameState.hasWinner) {
-      console.log(gameState.winningCombination.position.includes(index));
       return gameState.winningCombination.position.includes(index);
     }
     return false;
   };
+
   return (
     <div className="app-container">
       <h1>{renderTitle()}</h1>

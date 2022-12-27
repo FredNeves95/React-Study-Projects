@@ -20,7 +20,9 @@ const COUNTRIES_AND_CAPITALS = {
 };
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState("Tic Tac Toe");
+  const [selectedProject, setSelectedProject] = useState(
+    "Country Capital Game"
+  );
 
   const handleClick = (event) => {
     setSelectedProject(event.target.name);
