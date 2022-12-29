@@ -5,6 +5,7 @@ import "./DotsFromInputStype.scss";
 export default function DotsFromInput() {
   const offsetRef = useRef();
   const [selectedDots, setSelectedDots] = useState([]);
+  const [removedDots, setRemovedDots] = useState([]);
   const [inputValues, setInputValues] = useState({
     x: "",
     y: "",
@@ -80,8 +81,27 @@ export default function DotsFromInput() {
     }));
   };
 
-  const handleButtonClick = () => {
-    console.log("click");
+  const handleButtonClick = (event) => {
+    const { name } = event.target;
+
+    if (name === "Undo" && selectedDots.length) {
+      let newArray = selectedDots;
+      const lastItem = newArray.pop();
+      setSelectedDots(newArray);
+      setRemovedDots((prev) => [...prev, lastItem]);
+    }
+
+    if (name === "Redo" && removedDots.length) {
+      let newArray = removedDots;
+      const lastItem = newArray.pop();
+      setRemovedDots(newArray);
+      setSelectedDots((prev) => [...prev, lastItem]);
+    }
+
+    if (name === "Reset" && (selectedDots.length || removedDots.length)) {
+      setSelectedDots([]);
+      setRemovedDots([]);
+    }
   };
 
   useEffect(() => {
@@ -154,11 +174,7 @@ export default function DotsFromInput() {
       </div>
       <span className="dots-button-container">
         {ACTION_BUTTONS.map((button, index) => (
-          <button
-            key={index}
-            name={button}
-            onClick={recalculateRelativePosition}
-          >
+          <button key={index} name={button} onClick={handleButtonClick}>
             {button}
           </button>
         ))}
