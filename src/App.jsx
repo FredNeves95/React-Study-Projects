@@ -9,11 +9,13 @@ import LikeAndDeslike from "./projects/LikeAndDislike";
 import TicTacToe from "./projects/TicTacToe";
 import Dots from "./projects/Dots";
 import Form from "./projects/Form";
+import DotsFromInput from "./projects/DotsFromInput";
 
 import {
   COUNTRIES_AND_CAPITALS,
   countryAndCapitalGameDescription,
   dotsDescription,
+  dotsFromInputsDescription,
   formDescription,
   likeAndDeslikeDescription,
   PROJECTS,
@@ -21,7 +23,9 @@ import {
 } from "./utils/constants";
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState("Form");
+  const [selectedProject, setSelectedProject] = useState(
+    "Country Capital Game"
+  );
 
   useEffect(() => {
     document.title = selectedProject;
@@ -54,6 +58,11 @@ function App() {
     projectsMap.set(PROJECTS[4], {
       component: <Form />,
       description: formDescription,
+    });
+
+    projectsMap.set(PROJECTS[5], {
+      component: <DotsFromInput />,
+      description: dotsFromInputsDescription,
     });
 
     const currentProject = projectsMap.get(selectedProject);

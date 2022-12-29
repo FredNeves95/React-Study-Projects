@@ -1,7 +1,6 @@
 import { useState } from "react";
+import { ACTION_BUTTONS } from "../../utils/constants";
 import "./DotsStyle.scss";
-
-const ACTION_BUTTONS = ["Undo", "Redo", "Reset"];
 
 export default function Dots() {
   const [selectedDots, setSelectedDots] = useState([]);
