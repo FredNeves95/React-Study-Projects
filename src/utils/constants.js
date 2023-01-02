@@ -4,7 +4,8 @@ export const PROJECTS = [
     "Tic Tac Toe",
     "Dots",
     "Form",
-    'Dots from input'
+    'Dots from input',
+    'Pokedex'
 ];
 export const countryAndCapitalGameDescription = "In this game, the goal is to select the country and it's correspondent capital. If the selection is correct, both buttons will disappear."
 
@@ -18,6 +19,7 @@ export const tikTakToeDescription = 'Classic tic tac toe game. Call a friend and
 
 export const formDescription = 'Practicing form validations and differents input types'
 
+export const pokedexDescription = 'Practicing API requests and listing.'
 export const COUNTRIES_AND_CAPITALS = {
     Brazil: "Brasilia",
     Argentina: "Buenos Aires",

@@ -20,12 +20,12 @@ import {
   likeAndDeslikeDescription,
   PROJECTS,
   tikTakToeDescription,
+  pokedexDescription,
 } from "./utils/constants";
+import Pokedex from "./projects/Pokedex";
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState(
-    "Country Capital Game"
-  );
+  const [selectedProject, setSelectedProject] = useState("Pokedex");
 
   useEffect(() => {
     document.title = selectedProject;
@@ -65,6 +65,10 @@ function App() {
       description: dotsFromInputsDescription,
     });
 
+    projectsMap.set(PROJECTS[6], {
+      component: <Pokedex />,
+      description: pokedexDescription,
+    });
     const currentProject = projectsMap.get(selectedProject);
 
     const { component, description } = currentProject;
