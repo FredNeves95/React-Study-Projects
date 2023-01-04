@@ -25,7 +25,7 @@ import {
 import Pokedex from "./projects/Pokedex";
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState("Pokedex");
+  const [selectedProject, setSelectedProject] = useState(PROJECTS[0]);
 
   useEffect(() => {
     document.title = selectedProject;
@@ -77,22 +77,27 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Projects</h1>
-      <div className="projects-buttons-container">
-        {PROJECTS.map((project, index) => (
-          <button
-            className={cx({
-              "project-button": true,
-              selected: selectedProject === project,
-            })}
-            key={index}
-            name={project}
-            onClick={handleClick}
-          >
-            {project}
-          </button>
-        ))}
-      </div>
+      <header>
+        <span className="header-content">
+          <h1>Projects</h1>
+          <div className="projects-buttons-container">
+            {PROJECTS.map((project, index) => (
+              <button
+                className={cx({
+                  "project-button": true,
+                  selected: selectedProject === project,
+                })}
+                key={index}
+                name={project}
+                onClick={handleClick}
+              >
+                {project}
+              </button>
+            ))}
+          </div>
+        </span>
+      </header>
+
       <div className="projects-render">{handleRenderProject()}</div>
     </div>
   );

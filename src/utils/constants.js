@@ -19,7 +19,8 @@ export const tikTakToeDescription = 'Classic tic tac toe game. Call a friend and
 
 export const formDescription = 'Practicing form validations and differents input types'
 
-export const pokedexDescription = 'Practicing API requests and listing.'
+export const pokedexDescription = 'Practicing API requests, custom hooks, context api, key events and listing.'
+
 export const COUNTRIES_AND_CAPITALS = {
     Brazil: "Brasilia",
     Argentina: "Buenos Aires",
